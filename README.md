@@ -23,9 +23,6 @@ STORAGE
 
 
 ## Requirements
-- https://training.linuxfoundation.org/certification/linux-foundation-certified-engineer-lfce/
-- https://resources.linuxfoundation.org/LF+Training/LF_Training_WP_CertificationPrepGuide_October2018+(6).pdf
-
 
     Essential Commands 5%
         Use version control tools
@@ -33,7 +30,7 @@ STORAGE
         Run commands on many systems simultaneously
         Install Linux Distribution
 
-    Operation of Running Systems 18 %
+    Operation of Running Systems 18%
         Monitor, tune and troubleshoot system performance
         Update operating systems to provide required functionality and security
         Update the kernel and ensure the system is bootable
@@ -85,6 +82,9 @@ STORAGE
         Create and maintain software packages
         Create, configure and maintain containers
         Deploy, configure, and maintain high availability/clustering/replication
+
+- https://training.linuxfoundation.org/certification/linux-foundation-certified-engineer-lfce/
+- https://resources.linuxfoundation.org/LF+Training/LF_Training_WP_CertificationPrepGuide_October2018+(6).pdf
 
 
 ## Notes
