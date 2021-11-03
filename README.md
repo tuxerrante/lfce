@@ -1,5 +1,4 @@
 ## This repo helps in preparing for LFCE.
-
 LFCE
 - https://www.opsschool.org/unix_101.html
 - https://www.safaribooksonline.com/videos/linux-foundation-certified/9780134774015/9780134774015-LFCE_01_01_06
@@ -61,7 +60,7 @@ STORAGE
         Dynamically route IP traffic
         Implement advanced packet filtering
 
-    Service Configuration17%
+    Service Configuration 17%
         Implement and configure an HTTP server
         Implement and configure time synchronization server
         Implement and configure network logging server
