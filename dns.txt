@@ -1,3 +1,8 @@
+Resources:
+- https://help.ubuntu.com/community/BIND9ServerHowto
+- https://serverspace.io/support/help/bind9-as-a-primary-dns-server-on-ubuntu/
+
+
 For dns-clients/hosts which need to point to dns-servers. Use either /etc/resolv.conf but that would be overwritten on bootup, or add following line in /etc/network/interfaces
 dns-nameservers 8.8.8.8
 In order to see changes do ifup and ifdown
@@ -13,7 +18,9 @@ To install dns server.
 sudo apt-get install bind9
 
 To set up caching server(whatever that means)
-(I think by default it's working as caching server and nothing needs to be done as the response for command 'dig @localhost google.com' remains same, but following is what manual says)
+(I think by default it's working as caching server and nothing needs to be done 
+as the response for command 'dig @localhost google.com' remains same, but following is what manual says)
+
 sudo vim /etc/bind/named.conf.options
 (add following lines)
 listen-on port 53 { any; };

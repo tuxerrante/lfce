@@ -39,7 +39,26 @@ Use tar -xzvf and -czvf and -tvf (z for gzip).
 
 
 4) dpkg (--contents, --install or -i, --remove or -r)  
-Summary:
+
+## Summary
+#### Example 1
+```sh
+apt install dh-make
+
+git clone https://github.com/streadway/hello-debian
+cd hello-debian
+git archive master | gzip > ../hello-debian_0.0.1.tar.gz
+
+dh_make -p hello-debian_0.0.1 -f ../hello-debian_0.0.1.tar.gz
+dpkg-buildpackage -uc -us
+dpkg --install ../hello-debian_0.0.2-1_amd64.deb
+
+cd
+hello-world 
+```
+
+#### Example 2
+```
 tar -czvf cpphelloworld-1.0.tar.gz cpphelloworld-1.0/
 mkdir WORK
 mv cpphelloworld-1.0.tar.gz WORK/
@@ -51,7 +70,7 @@ dpkg-buildpackage -uc -us
 dpkg --contents ../cpphelloworld_1.0-1_amd64.deb
 sudo dpkg --install ../*.deb
 dpkg --remove cpphelloworld
-
+```
 
 My Example Makefile 
 

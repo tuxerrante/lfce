@@ -1,6 +1,7 @@
 ## This repo helps in preparing for LFCE.
 
 LFCE
+- https://www.opsschool.org/unix_101.html
 - https://www.safaribooksonline.com/videos/linux-foundation-certified/9780134774015/9780134774015-LFCE_01_01_06
 - https://learning.oreilly.com/videos/linux-foundation-certified/9780134774015/9780134774015-LFCE_01_01_00
 - https://github.com/rilindo/LFCE_Practice_Exams
@@ -23,7 +24,9 @@ STORAGE
 
 
 ## Requirements
-https://training.linuxfoundation.org/certification/linux-foundation-certified-engineer-lfce/
+- https://training.linuxfoundation.org/certification/linux-foundation-certified-engineer-lfce/
+- https://resources.linuxfoundation.org/LF+Training/LF_Training_WP_CertificationPrepGuide_October2018+(6).pdf
+
 
     Essential Commands 5%
         Use version control tools
@@ -86,15 +89,25 @@ https://training.linuxfoundation.org/certification/linux-foundation-certified-en
 
 
 ## Notes
-1st: 
+**Tmux** can be used!
+- https://linuxize.com/post/getting-started-with-tmux/
 
-Starting docker image.
-Pam
-Put firewall for TCP port and specific user
-DNS zone example.com.
-Apache server
-Squid
-Degrade a package
+Some possible question:
+- Docker container with CPU limits
+    - Starting docker image
+- Configure  load balancer - reverse proxy
+- build package pkgbuild
+    - Degrade a package
+- Configure OpenVPN
+- LDAP server and clients
+- Routing traffic
+- Install Apache web server and configure SSL
+- One service can not start, resolve issue with Apparmor
+- LXC containers
+- Pam
+- Put firewall for TCP port and specific user
+- DNS zone example.com.
+- Squid
 Ctrl + w , ctrl +alt + w wasn't working 
 
 2nd: 
@@ -127,6 +140,7 @@ install squid and configure it to take configuration from squid-upstream and the
 
 >kernel/random question
 there's a kernel in /srv/xxxx, make it bootable or installable at bootup. I did it using systemd. I used command to install dpkg --install ....
+
 >rsyslog
 install and enable and someother stuff
 
@@ -139,6 +153,7 @@ total of two questions
 configure pam ssh so that if user tries to login 5 time, it gets refused
 
 >Database
+- [mariaDB](mariadb.md)
 
 >Openldap
 looks like ldap server was already installed. kind of exercise provided by linuxacademy.com
