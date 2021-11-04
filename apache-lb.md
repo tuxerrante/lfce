@@ -40,3 +40,4 @@ BALANCER_IP=$(lxc info balancer |grep -m1 inet |cut -f3)
 
 for i in $(seq 1 5); do curl -i http://${BALANCER_IP}/; done
 ```
+![Round robin in action](apache-lb.png)
