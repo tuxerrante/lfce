@@ -1,4 +1,4 @@
-
+```sh
 apt update; apt -y install lxc lxd && lxd init
 
 lxc launch images:ubuntu/21.04 balancer -c limits.cpu=1
@@ -39,3 +39,4 @@ $ lxc exec apache-wrk-02 -- sh -c "echo 'APACHE WORKER 02' >/var/www/html/index.
 BALANCER_IP=$(lxc info balancer |grep -m1 inet |cut -f3)
 
 for i in $(seq 1 5); do curl -i http://${BALANCER_IP}/; done
+```
