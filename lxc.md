@@ -134,7 +134,7 @@ lxc start centos-nginx-wrk-01
 export NGINX_02_IP=`lxc info centos-nginx-wrk-01 |grep -m1 inet |cut -f3`
 ```
 
-##### Create a cluster
+##### NGINX load balancer to cluster
 
 ```sh
 lxc exec centos-nginx-master -- sh -c "echo $NGINX_02_IP bucket >> /etc/hosts"

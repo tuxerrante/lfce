@@ -93,8 +93,9 @@ STORAGE
 
 Some possible question:
 - Docker container with CPU limits
-    - Starting docker image
-- Configure  load balancer - reverse proxy
+    - [docker.txt](docker.txt)
+- Configure load balancer - reverse proxy
+    - [apache load balancer](https://httpd.apache.org/docs/2.4/mod/mod_proxy_balancer.html)
 - build package pkgbuild
     - Degrade a package
 - Configure OpenVPN
