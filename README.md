@@ -87,117 +87,108 @@ STORAGE
 - https://resources.linuxfoundation.org/LF+Training/LF_Training_WP_CertificationPrepGuide_October2018+(6).pdf
 
 
-## Notes
+## Possible questions
 **Tmux** can be used!
 - https://linuxize.com/post/getting-started-with-tmux/
 
-Some possible question:
+
+- rsyslog 4%
+    change server tcp port
+
+- FILE SYSTEM
+    - Big pages setting 
+    - many questions: give permission to directory /xxx/xxx 740 and all the files inside this directory 6xx
+    - volumes 4%   
+    Create different volumes in a volume group: mirrored, listed, striped  
+
+- FILE MANIPULATION 3%  
+    - extract info from a file and redirect to a second one (cut, sort, uniq, grep, awk)
+    - sed: Question to do a lot of things with file manipulation, like delete all redundant lines, delete second column, and many more. 
+
+
+- IPTABLES  
+    Allow traffic from host X only on port Y ...
+    Redirect traffic ...
+	    
+- DNS 10%  
+    **Don't forget about /etc/default/bind9**
+    - Bind9 double zones based on views (internals 10.250.0.2/24)
+    - install bind
+    - configure it so that at-least it's listening at lo 
+    - create a policy at /etc/bind/zones for example.com
+
+- NFS 10%  
+    - create nfs share : give ro insecure access to network xx.xx.xx.xx. Give rw secure access to example.com
+    - Mount a device with authentication.
+    Ensure that the appropriate export option is set so that the root UID/GID is mapped to the anonymous UID/GID.  
+    - Set up the share to ensure that files are created with default permissions of 664, and directories with default permissions of 775
+
+- LDAP PAM  
+    Permit the access by ldap to remote user creating automatically his home folder.
+
+- MariaDB  
+    fails to start: myisam-recover for all MyISAM tables and aria-recover
+    - [mariaDB](mariadb.md)
+
+- Git 
+    clone repo in ssh, create branch, push and search in the logs
+
 - Docker container with CPU limits
     - [docker.txt](docker.txt)
+    - create a docker with nginx:xxx (docker was not installed)
+
 - Configure load balancer - reverse proxy
     - [apache load balancer](https://httpd.apache.org/docs/2.4/mod/mod_proxy_balancer.html)
+
 - build package pkgbuild
     - Degrade a package
+
 - Configure OpenVPN
+
 - LDAP server and clients
+
 - Routing traffic
+
 - Install Apache web server and configure SSL
-- One service can not start, resolve issue with Apparmor
+    - change http and https ports
+
+- APPARMOR  
+    - One service can not start, resolve issue with Apparmor
+
 - LXC containers
+    - given a domain file, make it auto-bootable, change memory and cpu configs..
+
 - Pam
-- Put firewall for TCP port and specific user
-- DNS zone example.com.
-- Squid
-Ctrl + w , ctrl +alt + w wasn't working 
+    - configure pam ssh so that if user tries to login 5 time, it gets refused
 
-2nd: 
+- Firewall  
+    - this one may not have to be done using firewall -> disallow user charlie to get or maybe send at tcp/portxxx on computer xxxxx. 
+    - route traffic from port xxx at internet interface to ip address xx.x.x.x at port xx 
 
->Docker
-create a docker with nginx:xxx 
-docker was not installed
-
->udev
-maybe: do somthing with /srv/xxxx
-or maybe: create some drives
-
->systemd
-fix issues with mysql without modifying configuration files
-
->Packaging
-create deb package, tar was provided 
-
->samba
-create filesystem 
-create user xxxxx
-allow that user
-
->git
-clone a git repo from gitserver(didn't mention username) at /srv/xxx, ssh has been configured correctly, to /anther/location
-then do bunch of stuff using git
-
->squid
+- Squid  
 install squid and configure it to take configuration from squid-upstream and then maybe clone to squid-downstream
 
->kernel/random question
-there's a kernel in /srv/xxxx, make it bootable or installable at bootup. I did it using systemd. I used command to install dpkg --install ....
+Ctrl + w , ctrl +alt + w wasn't working 
 
->rsyslog
-install and enable and someother stuff
+- udev  
+    maybe: do somthing with /srv/xxxx. or maybe: create some drives
 
->partition
-create volume group vgx using /dev/xxx /dev/xxx /dev/xxx with 500 MB. 
-create ...... with slicing 5MB. 
-total of two questions
+- systemd  
+fix issues with mysql without modifying configuration files
 
->pam
-configure pam ssh so that if user tries to login 5 time, it gets refused
+- Packaging  
+    - create deb package, tar was provided 
+    - downgrade package cesxxxx to last version
 
->Database
-- [mariaDB](mariadb.md)
+- Samba  
+create filesystem, create user xxxxx, allow that user
 
->Openldap
-looks like ldap server was already installed. kind of exercise provided by linuxacademy.com
+- Kernel
+there's a kernel in /srv/xxxx, make it bootable or installable at bootup. 
 
->Firewall
-i)this one may not have to be done using firewall -> disallow user charlie to get or maybe send at tcp/portxxx on computer xxxxx. 
-ii) route traffic from port xxx at internet interface to ip address xx.x.x.x at port xx 
+- Email  
+configure postfix: use /xxx/xxx.key to create certificate signing request and put it at /xxx/xxxx.  use same key and create self signed certificate and put it /xxx/xxx.  use that ssl key and certificate
 
->LXC
-it was mentioned they were using lxc for all the machines in the beginning. Create lxc Fxxxx and clone Gxxxx and with or something related to /srv/xxx
-maybe also boot + not boot with these lxc images
-
->Permission
-many questions: give permission to directory /xxx/xxx 740 and all the files inside this directory 6xx
-
->Email
-configure postfix
-use /xxx/xxx.key to create certificate signing request and put it at /xxx/xxxx
-use same key and create self signed certificate and put it /xxx/xxx
-use that ssl key and certificate
-
->Apache
-install apache
-configure http to listen on port 123 and https to listen on port 567.
-
->Random question
-i) failsafe to server xxxxxxx
-ii do it using only nginx or haproxy
-
->Downgrade 
-downgrade package cesxxxx to last version
-
->NFS
-create nfs share 
-give ro insecure access to network xx.xx.xx.xx
-give rw secure access to example.com
-
->DNS
-install bind
-configure it so that at-least it's listening at lo 
-create a policy at /etc/bind/zones for example.com
-
->JAVE=xxxx
-setup environment variable and confirm using ssh
-
->sed
-Question to do a lot of things with file manipulation, like delete all redundant lines, delete second column, and many more. 
+- Random question
+    -  failsafe to server xxxxxxx
+    -  do it using only nginx or haproxy

@@ -12,6 +12,14 @@ Client 1:
 	Won't require passphrase everytime
 
 Port Forwarding
+	This forwards the local port 8001 on your workstation to the localhost address on remote-server.com port 8000.
+	-g means allow other clients on my network to connect to port 8001 on my workstation. Otherwise only local clients on your workstation can connect to the forwarded port.
+	-N means all I am doing is forwarding ports, don't start a shell.
+	-f means fork into background after a successful SSH connection and log-in.
+	Port 8001 will stay open for many connections, until ssh dies or is killed.
+    ssh -g -L 8001:localhost:8000 -f -N user@remote-server.com
+
+
 	ssh -fNL 4444:rhatcert.com:80 root@192.168.33.20
 	(Testing) w3m http://localhost:4444
 	
